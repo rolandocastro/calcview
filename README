@@ -1,0 +1,30 @@
+#create the image
+docker build -t calcview .
+
+
+#to show the images
+docker images  
+
+
+#to run 
+run docker and automatic remove when stop 
+//-v $(pwd):/app on linux
+docker run --rm -it --name calcviewWeb -p 3000:3000 -v %cd%:/app calcview
+docker run --rm -it --name calcviewWeb -p 3000:3000 -v ${pwd}:/app calcview
+docker run --rm -it --name calcviewWeb -p 3000:3000 -v //c/Users/castrohr/Documents/projects/calcview:/app calcview
+docker run --rm -it --name calcviewWeb -dp 3000:3000 -v calcviewVolume:/app calcview
+
+#check what is running
+docker ps
+
+#get into the image //bash
+docker exec -it web bash 
+#windows
+docker exec -it web sh
+winpty docker exec -it <container-id> //bin//sh
+
+#see the location of the volume files 
+docker inspect volumeName 
+
+#see on fileexplorer
+\\wsl$
